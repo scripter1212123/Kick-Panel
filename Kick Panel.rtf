@@ -1,0 +1,1038 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- GUI to Lua\
+-----\
+-- Version: 2.0.\
+-- Made by chrisopdemobiel.\
+\
+-- Instances:\
+\
+local AdminPanelGui = Instance.new("ScreenGui")\
+local ButtonFrame = Instance.new("Frame")\
+local TextButton = Instance.new("TextButton")\
+local MenuFrame = Instance.new("Frame")\
+local KickPlayer = Instance.new("TextButton")\
+local BanPlayer = Instance.new("TextButton")\
+local ShutdownServer = Instance.new("TextButton")\
+local CloseMenu = Instance.new("TextButton")\
+local UnbanPlayer = Instance.new("TextButton")\
+local KillPlayer = Instance.new("TextButton")\
+local BroadcastMessage = Instance.new("TextButton")\
+local KickMenuFrame = Instance.new("Frame")\
+local PlayerToKick = Instance.new("TextLabel")\
+local TargetName = Instance.new("TextBox")\
+local ReasonOptional = Instance.new("TextLabel")\
+local ReasonBox = Instance.new("TextBox")\
+local KickPlayer_2 = Instance.new("TextButton")\
+local Back = Instance.new("TextButton")\
+local BanMenuFrame = Instance.new("Frame")\
+local PlayerToBan = Instance.new("TextLabel")\
+local TargetName_2 = Instance.new("TextBox")\
+local ReasonOptional_2 = Instance.new("TextLabel")\
+local ReasonBox_2 = Instance.new("TextBox")\
+local BanPlayer_2 = Instance.new("TextButton")\
+local Back_2 = Instance.new("TextButton")\
+local UnbanMenuFrame = Instance.new("Frame")\
+local PlayerToUnban = Instance.new("TextLabel")\
+local TargetName_3 = Instance.new("TextBox")\
+local UnbanPlayer_2 = Instance.new("TextButton")\
+local Back_3 = Instance.new("TextButton")\
+local Events = Instance.new("Folder")\
+local KillMenuFrame = Instance.new("Frame")\
+local PlayerToKill = Instance.new("TextLabel")\
+local TargetName_4 = Instance.new("TextBox")\
+local KillPlayer_2 = Instance.new("TextButton")\
+local Back_4 = Instance.new("TextButton")\
+local BroadcastMenuFrame = Instance.new("Frame")\
+local MessageToBroadcast = Instance.new("TextLabel")\
+local Message = Instance.new("TextBox")\
+local Broadcast = Instance.new("TextButton")\
+local Back_5 = Instance.new("TextButton")\
+local AdminPanelPublic = Instance.new("Folder")\
+\
+--Properties:\
+\
+AdminPanelGui.Name = "AdminPanelGui"\
+AdminPanelGui.Parent = game.Workspace\
+\
+ButtonFrame.Name = "ButtonFrame"\
+ButtonFrame.Parent = AdminPanelGui\
+ButtonFrame.Active = true\
+ButtonFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+ButtonFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+ButtonFrame.Draggable = true\
+ButtonFrame.Position = UDim2.new(0, 0, 1, -50)\
+ButtonFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+TextButton.Parent = ButtonFrame\
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+TextButton.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+TextButton.Size = UDim2.new(1, 100, 0.699999988, 50)\
+TextButton.Style = Enum.ButtonStyle.RobloxButtonDefault\
+TextButton.Font = Enum.Font.ArialBold\
+TextButton.Text = "Admin"\
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)\
+TextButton.TextSize = 24.000\
+\
+MenuFrame.Name = "MenuFrame"\
+MenuFrame.Parent = AdminPanelGui\
+MenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+MenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+MenuFrame.Draggable = true\
+MenuFrame.Position = UDim2.new(0.5, -200, 0.5, -250)\
+MenuFrame.Size = UDim2.new(0, 400, 0, 500)\
+MenuFrame.Visible = false\
+MenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+KickPlayer.Name = "KickPlayer"\
+KickPlayer.Parent = MenuFrame\
+KickPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+KickPlayer.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+KickPlayer.Position = UDim2.new(0.200000003, 0, 0, 0)\
+KickPlayer.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+KickPlayer.Style = Enum.ButtonStyle.RobloxButtonDefault\
+KickPlayer.Font = Enum.Font.ArialBold\
+KickPlayer.Text = "Kick Player"\
+KickPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)\
+KickPlayer.TextSize = 24.000\
+\
+BanPlayer.Name = "BanPlayer"\
+BanPlayer.Parent = MenuFrame\
+BanPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+BanPlayer.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+BanPlayer.Position = UDim2.new(0.200000003, 0, 0.129999995, 0)\
+BanPlayer.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+BanPlayer.Style = Enum.ButtonStyle.RobloxButtonDefault\
+BanPlayer.Font = Enum.Font.ArialBold\
+BanPlayer.Text = "Ban Player"\
+BanPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)\
+BanPlayer.TextSize = 24.000\
+\
+ShutdownServer.Name = "ShutdownServer"\
+ShutdownServer.Parent = MenuFrame\
+ShutdownServer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+ShutdownServer.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+ShutdownServer.Position = UDim2.new(0.200000003, 0, 0.25999999, 0)\
+ShutdownServer.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+ShutdownServer.Style = Enum.ButtonStyle.RobloxButtonDefault\
+ShutdownServer.Font = Enum.Font.ArialBold\
+ShutdownServer.Text = "Shutdown Server"\
+ShutdownServer.TextColor3 = Color3.fromRGB(255, 255, 255)\
+ShutdownServer.TextSize = 24.000\
+\
+CloseMenu.Name = "CloseMenu"\
+CloseMenu.Parent = MenuFrame\
+CloseMenu.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+CloseMenu.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+CloseMenu.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+CloseMenu.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+CloseMenu.Style = Enum.ButtonStyle.RobloxButtonDefault\
+CloseMenu.Font = Enum.Font.ArialBold\
+CloseMenu.Text = "Close Menu"\
+CloseMenu.TextColor3 = Color3.fromRGB(255, 255, 255)\
+CloseMenu.TextSize = 24.000\
+\
+UnbanPlayer.Name = "UnbanPlayer"\
+UnbanPlayer.Parent = MenuFrame\
+UnbanPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+UnbanPlayer.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+UnbanPlayer.Position = UDim2.new(0.200000003, 0, 0.389999986, 0)\
+UnbanPlayer.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+UnbanPlayer.Style = Enum.ButtonStyle.RobloxButtonDefault\
+UnbanPlayer.Font = Enum.Font.ArialBold\
+UnbanPlayer.Text = "Unban Player"\
+UnbanPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)\
+UnbanPlayer.TextSize = 24.000\
+\
+KillPlayer.Name = "KillPlayer"\
+KillPlayer.Parent = MenuFrame\
+KillPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+KillPlayer.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+KillPlayer.Position = UDim2.new(0.200000003, 0, 0.519999981, 0)\
+KillPlayer.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+KillPlayer.Style = Enum.ButtonStyle.RobloxButtonDefault\
+KillPlayer.Font = Enum.Font.ArialBold\
+KillPlayer.Text = "Kill Player"\
+KillPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)\
+KillPlayer.TextSize = 24.000\
+\
+BroadcastMessage.Name = "BroadcastMessage"\
+BroadcastMessage.Parent = MenuFrame\
+BroadcastMessage.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+BroadcastMessage.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+BroadcastMessage.Position = UDim2.new(0.200000003, 0, 0.649999976, 0)\
+BroadcastMessage.Size = UDim2.new(0.600000024, 0, 0.119999997, 0)\
+BroadcastMessage.Style = Enum.ButtonStyle.RobloxButtonDefault\
+BroadcastMessage.Font = Enum.Font.ArialBold\
+BroadcastMessage.Text = "Broadcast Message"\
+BroadcastMessage.TextColor3 = Color3.fromRGB(255, 255, 255)\
+BroadcastMessage.TextSize = 24.000\
+\
+KickMenuFrame.Name = "KickMenuFrame"\
+KickMenuFrame.Parent = AdminPanelGui\
+KickMenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+KickMenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+KickMenuFrame.Draggable = true\
+KickMenuFrame.Position = UDim2.new(0.5, -200, 0.5, -200)\
+KickMenuFrame.Size = UDim2.new(0, 400, 0, 400)\
+KickMenuFrame.Visible = false\
+KickMenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+PlayerToKick.Name = "PlayerToKick"\
+PlayerToKick.Parent = KickMenuFrame\
+PlayerToKick.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToKick.BackgroundTransparency = 1.000\
+PlayerToKick.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+PlayerToKick.Position = UDim2.new(0.224999994, 0, 0, 0)\
+PlayerToKick.Size = UDim2.new(0, 200, 0, 50)\
+PlayerToKick.Font = Enum.Font.ArialBold\
+PlayerToKick.Text = "Player to kick:"\
+PlayerToKick.TextColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToKick.TextSize = 24.000\
+\
+TargetName.Name = "TargetName"\
+TargetName.Parent = KickMenuFrame\
+TargetName.Active = false\
+TargetName.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+TargetName.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+TargetName.Position = UDim2.new(0.100000001, 0, 0.150000006, 0)\
+TargetName.Size = UDim2.new(0, 300, 0, 50)\
+TargetName.Font = Enum.Font.ArialBold\
+TargetName.MultiLine = true\
+TargetName.Text = ""\
+TargetName.TextColor3 = Color3.fromRGB(255, 255, 255)\
+TargetName.TextScaled = true\
+TargetName.TextSize = 24.000\
+TargetName.TextWrapped = true\
+\
+ReasonOptional.Name = "ReasonOptional"\
+ReasonOptional.Parent = KickMenuFrame\
+ReasonOptional.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonOptional.BackgroundTransparency = 1.000\
+ReasonOptional.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+ReasonOptional.Position = UDim2.new(0.224999994, 0, 0.300000012, 0)\
+ReasonOptional.Size = UDim2.new(0, 200, 0, 50)\
+ReasonOptional.Font = Enum.Font.ArialBold\
+ReasonOptional.Text = "Reason (optional):"\
+ReasonOptional.TextColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonOptional.TextSize = 24.000\
+\
+ReasonBox.Name = "ReasonBox"\
+ReasonBox.Parent = KickMenuFrame\
+ReasonBox.Active = false\
+ReasonBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+ReasonBox.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+ReasonBox.Position = UDim2.new(0.100000001, 0, 0.449999988, 0)\
+ReasonBox.Size = UDim2.new(0, 300, 0, 50)\
+ReasonBox.Font = Enum.Font.ArialBold\
+ReasonBox.MultiLine = true\
+ReasonBox.Text = ""\
+ReasonBox.TextColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonBox.TextScaled = true\
+ReasonBox.TextSize = 24.000\
+ReasonBox.TextWrapped = true\
+\
+KickPlayer_2.Name = "KickPlayer"\
+KickPlayer_2.Parent = KickMenuFrame\
+KickPlayer_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+KickPlayer_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+KickPlayer_2.Position = UDim2.new(0.200000003, 0, 0.620000005, 0)\
+KickPlayer_2.Selectable = false\
+KickPlayer_2.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+KickPlayer_2.Style = Enum.ButtonStyle.RobloxButtonDefault\
+KickPlayer_2.Font = Enum.Font.ArialBold\
+KickPlayer_2.Text = "Kick"\
+KickPlayer_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+KickPlayer_2.TextSize = 24.000\
+\
+Back.Name = "Back"\
+Back.Parent = KickMenuFrame\
+Back.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Back.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Back.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+Back.Selectable = false\
+Back.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Back.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Back.Font = Enum.Font.ArialBold\
+Back.Text = "Back"\
+Back.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Back.TextSize = 24.000\
+\
+BanMenuFrame.Name = "BanMenuFrame"\
+BanMenuFrame.Parent = AdminPanelGui\
+BanMenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+BanMenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+BanMenuFrame.Draggable = true\
+BanMenuFrame.Position = UDim2.new(0.5, -200, 0.5, -200)\
+BanMenuFrame.Size = UDim2.new(0, 400, 0, 400)\
+BanMenuFrame.Visible = false\
+BanMenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+PlayerToBan.Name = "PlayerToBan"\
+PlayerToBan.Parent = BanMenuFrame\
+PlayerToBan.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToBan.BackgroundTransparency = 1.000\
+PlayerToBan.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+PlayerToBan.Position = UDim2.new(0.224999994, 0, 0, 0)\
+PlayerToBan.Size = UDim2.new(0, 200, 0, 50)\
+PlayerToBan.Font = Enum.Font.ArialBold\
+PlayerToBan.Text = "Player to ban:"\
+PlayerToBan.TextColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToBan.TextSize = 24.000\
+\
+TargetName_2.Name = "TargetName"\
+TargetName_2.Parent = BanMenuFrame\
+TargetName_2.Active = false\
+TargetName_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+TargetName_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+TargetName_2.Position = UDim2.new(0.100000001, 0, 0.150000006, 0)\
+TargetName_2.Size = UDim2.new(0, 300, 0, 50)\
+TargetName_2.Font = Enum.Font.ArialBold\
+TargetName_2.MultiLine = true\
+TargetName_2.Text = ""\
+TargetName_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+TargetName_2.TextScaled = true\
+TargetName_2.TextSize = 24.000\
+TargetName_2.TextWrapped = true\
+\
+ReasonOptional_2.Name = "ReasonOptional"\
+ReasonOptional_2.Parent = BanMenuFrame\
+ReasonOptional_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonOptional_2.BackgroundTransparency = 1.000\
+ReasonOptional_2.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+ReasonOptional_2.Position = UDim2.new(0.224999994, 0, 0.300000012, 0)\
+ReasonOptional_2.Size = UDim2.new(0, 200, 0, 50)\
+ReasonOptional_2.Font = Enum.Font.ArialBold\
+ReasonOptional_2.Text = "Reason (optional):"\
+ReasonOptional_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonOptional_2.TextSize = 24.000\
+\
+ReasonBox_2.Name = "ReasonBox"\
+ReasonBox_2.Parent = BanMenuFrame\
+ReasonBox_2.Active = false\
+ReasonBox_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+ReasonBox_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+ReasonBox_2.Position = UDim2.new(0.100000001, 0, 0.449999988, 0)\
+ReasonBox_2.Size = UDim2.new(0, 300, 0, 50)\
+ReasonBox_2.Font = Enum.Font.ArialBold\
+ReasonBox_2.MultiLine = true\
+ReasonBox_2.Text = ""\
+ReasonBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+ReasonBox_2.TextScaled = true\
+ReasonBox_2.TextSize = 24.000\
+ReasonBox_2.TextWrapped = true\
+\
+BanPlayer_2.Name = "BanPlayer"\
+BanPlayer_2.Parent = BanMenuFrame\
+BanPlayer_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+BanPlayer_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+BanPlayer_2.Position = UDim2.new(0.200000003, 0, 0.620000005, 0)\
+BanPlayer_2.Selectable = false\
+BanPlayer_2.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+BanPlayer_2.Style = Enum.ButtonStyle.RobloxButtonDefault\
+BanPlayer_2.Font = Enum.Font.ArialBold\
+BanPlayer_2.Text = "Ban"\
+BanPlayer_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+BanPlayer_2.TextSize = 24.000\
+\
+Back_2.Name = "Back"\
+Back_2.Parent = BanMenuFrame\
+Back_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Back_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Back_2.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+Back_2.Selectable = false\
+Back_2.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Back_2.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Back_2.Font = Enum.Font.ArialBold\
+Back_2.Text = "Back"\
+Back_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Back_2.TextSize = 24.000\
+\
+UnbanMenuFrame.Name = "UnbanMenuFrame"\
+UnbanMenuFrame.Parent = AdminPanelGui\
+UnbanMenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+UnbanMenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+UnbanMenuFrame.Draggable = true\
+UnbanMenuFrame.Position = UDim2.new(0.5, -200, 0.5, -200)\
+UnbanMenuFrame.Size = UDim2.new(0, 400, 0, 400)\
+UnbanMenuFrame.Visible = false\
+UnbanMenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+PlayerToUnban.Name = "PlayerToUnban"\
+PlayerToUnban.Parent = UnbanMenuFrame\
+PlayerToUnban.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToUnban.BackgroundTransparency = 1.000\
+PlayerToUnban.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+PlayerToUnban.Position = UDim2.new(0.224999994, 0, 0, 0)\
+PlayerToUnban.Size = UDim2.new(0, 200, 0, 50)\
+PlayerToUnban.Font = Enum.Font.ArialBold\
+PlayerToUnban.Text = "Player to unban:"\
+PlayerToUnban.TextColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToUnban.TextSize = 24.000\
+\
+TargetName_3.Name = "TargetName"\
+TargetName_3.Parent = UnbanMenuFrame\
+TargetName_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+TargetName_3.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+TargetName_3.Position = UDim2.new(0.100000001, 0, 0.150000006, 0)\
+TargetName_3.Size = UDim2.new(0, 300, 0, 50)\
+TargetName_3.Font = Enum.Font.ArialBold\
+TargetName_3.MultiLine = true\
+TargetName_3.Text = ""\
+TargetName_3.TextColor3 = Color3.fromRGB(255, 255, 255)\
+TargetName_3.TextScaled = true\
+TargetName_3.TextSize = 24.000\
+TargetName_3.TextWrapped = true\
+\
+UnbanPlayer_2.Name = "UnbanPlayer"\
+UnbanPlayer_2.Parent = UnbanMenuFrame\
+UnbanPlayer_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+UnbanPlayer_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+UnbanPlayer_2.Position = UDim2.new(0.200000003, 0, 0.349999994, 0)\
+UnbanPlayer_2.Selectable = false\
+UnbanPlayer_2.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+UnbanPlayer_2.Style = Enum.ButtonStyle.RobloxButtonDefault\
+UnbanPlayer_2.Font = Enum.Font.ArialBold\
+UnbanPlayer_2.Text = "Unban"\
+UnbanPlayer_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+UnbanPlayer_2.TextSize = 24.000\
+\
+Back_3.Name = "Back"\
+Back_3.Parent = UnbanMenuFrame\
+Back_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Back_3.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Back_3.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+Back_3.Selectable = false\
+Back_3.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Back_3.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Back_3.Font = Enum.Font.ArialBold\
+Back_3.Text = "Back"\
+Back_3.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Back_3.TextSize = 24.000\
+\
+Events.Name = "Events"\
+Events.Parent = AdminPanelGui\
+\
+KillMenuFrame.Name = "KillMenuFrame"\
+KillMenuFrame.Parent = AdminPanelGui\
+KillMenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+KillMenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+KillMenuFrame.Draggable = true\
+KillMenuFrame.Position = UDim2.new(0.5, -200, 0.5, -200)\
+KillMenuFrame.Size = UDim2.new(0, 400, 0, 400)\
+KillMenuFrame.Visible = false\
+KillMenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+PlayerToKill.Name = "PlayerToKill"\
+PlayerToKill.Parent = KillMenuFrame\
+PlayerToKill.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToKill.BackgroundTransparency = 1.000\
+PlayerToKill.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+PlayerToKill.Position = UDim2.new(0.224999994, 0, 0, 0)\
+PlayerToKill.Size = UDim2.new(0, 200, 0, 50)\
+PlayerToKill.Font = Enum.Font.ArialBold\
+PlayerToKill.Text = "Player to kill:"\
+PlayerToKill.TextColor3 = Color3.fromRGB(255, 255, 255)\
+PlayerToKill.TextSize = 24.000\
+\
+TargetName_4.Name = "TargetName"\
+TargetName_4.Parent = KillMenuFrame\
+TargetName_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+TargetName_4.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+TargetName_4.Position = UDim2.new(0.100000001, 0, 0.150000006, 0)\
+TargetName_4.Size = UDim2.new(0, 300, 0, 50)\
+TargetName_4.Font = Enum.Font.ArialBold\
+TargetName_4.MultiLine = true\
+TargetName_4.Text = ""\
+TargetName_4.TextColor3 = Color3.fromRGB(255, 255, 255)\
+TargetName_4.TextScaled = true\
+TargetName_4.TextSize = 24.000\
+TargetName_4.TextWrapped = true\
+\
+KillPlayer_2.Name = "KillPlayer"\
+KillPlayer_2.Parent = KillMenuFrame\
+KillPlayer_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+KillPlayer_2.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+KillPlayer_2.Position = UDim2.new(0.200000003, 0, 0.349999994, 0)\
+KillPlayer_2.Selectable = false\
+KillPlayer_2.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+KillPlayer_2.Style = Enum.ButtonStyle.RobloxButtonDefault\
+KillPlayer_2.Font = Enum.Font.ArialBold\
+KillPlayer_2.Text = "Kill"\
+KillPlayer_2.TextColor3 = Color3.fromRGB(255, 255, 255)\
+KillPlayer_2.TextSize = 24.000\
+\
+Back_4.Name = "Back"\
+Back_4.Parent = KillMenuFrame\
+Back_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Back_4.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Back_4.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+Back_4.Selectable = false\
+Back_4.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Back_4.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Back_4.Font = Enum.Font.ArialBold\
+Back_4.Text = "Back"\
+Back_4.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Back_4.TextSize = 24.000\
+\
+BroadcastMenuFrame.Name = "BroadcastMenuFrame"\
+BroadcastMenuFrame.Parent = AdminPanelGui\
+BroadcastMenuFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+BroadcastMenuFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+BroadcastMenuFrame.Draggable = true\
+BroadcastMenuFrame.Position = UDim2.new(0.5, -200, 0.5, -200)\
+BroadcastMenuFrame.Size = UDim2.new(0, 400, 0, 400)\
+BroadcastMenuFrame.Visible = false\
+BroadcastMenuFrame.Style = Enum.FrameStyle.RobloxRound\
+\
+MessageToBroadcast.Name = "MessageToBroadcast"\
+MessageToBroadcast.Parent = BroadcastMenuFrame\
+MessageToBroadcast.BackgroundColor3 = Color3.fromRGB(255, 255, 255)\
+MessageToBroadcast.BackgroundTransparency = 1.000\
+MessageToBroadcast.BorderColor3 = Color3.fromRGB(27, 42, 53)\
+MessageToBroadcast.Position = UDim2.new(0.224999994, 0, 0, 0)\
+MessageToBroadcast.Size = UDim2.new(0, 200, 0, 50)\
+MessageToBroadcast.Font = Enum.Font.ArialBold\
+MessageToBroadcast.Text = "Message to broadcast:"\
+MessageToBroadcast.TextColor3 = Color3.fromRGB(255, 255, 255)\
+MessageToBroadcast.TextSize = 24.000\
+\
+Message.Name = "Message"\
+Message.Parent = BroadcastMenuFrame\
+Message.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Message.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Message.Position = UDim2.new(0.100000001, 0, 0.150000006, 0)\
+Message.Size = UDim2.new(0, 300, 0, 50)\
+Message.Font = Enum.Font.ArialBold\
+Message.MultiLine = true\
+Message.Text = ""\
+Message.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Message.TextScaled = true\
+Message.TextSize = 24.000\
+Message.TextWrapped = true\
+\
+Broadcast.Name = "Broadcast"\
+Broadcast.Parent = BroadcastMenuFrame\
+Broadcast.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Broadcast.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Broadcast.Position = UDim2.new(0.200000003, 0, 0.349999994, 0)\
+Broadcast.Selectable = false\
+Broadcast.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Broadcast.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Broadcast.Font = Enum.Font.ArialBold\
+Broadcast.Text = "Broadcast"\
+Broadcast.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Broadcast.TextSize = 24.000\
+Broadcast.TextWrapped = true\
+\
+Back_5.Name = "Back"\
+Back_5.Parent = BroadcastMenuFrame\
+Back_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)\
+Back_5.BorderColor3 = Color3.fromRGB(255, 0, 0)\
+Back_5.Position = UDim2.new(0.200000003, 0, 0.850000024, 0)\
+Back_5.Selectable = false\
+Back_5.Size = UDim2.new(0.600000024, 0, 0.150000006, 0)\
+Back_5.Style = Enum.ButtonStyle.RobloxButtonDefault\
+Back_5.Font = Enum.Font.ArialBold\
+Back_5.Text = "Back"\
+Back_5.TextColor3 = Color3.fromRGB(255, 255, 255)\
+Back_5.TextSize = 24.000\
+\
+AdminPanelPublic.Name = "AdminPanelPublic"\
+AdminPanelPublic.Parent = AdminPanelGui\
+\
+-- Scripts:\
+\
+local function JVOJSQD_fake_script() -- TextButton.LocalScript \
+	local script = Instance.new('LocalScript', TextButton)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(JVOJSQD_fake_script)()\
+local function PIQIEZ_fake_script() -- KickPlayer.LocalScript \
+	local script = Instance.new('LocalScript', KickPlayer)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.KickMenuFrame.Active = true\
+		script.Parent.Parent.Parent.KickMenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(PIQIEZ_fake_script)()\
+local function BMXYQCN_fake_script() -- BanPlayer.LocalScript \
+	local script = Instance.new('LocalScript', BanPlayer)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.BanMenuFrame.Active = true\
+		script.Parent.Parent.Parent.BanMenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(BMXYQCN_fake_script)()\
+local function FKSKFVV_fake_script() -- ShutdownServer.LocalScript \
+	local script = Instance.new('LocalScript', ShutdownServer)\
+\
+	function onClick()\
+		script.Parent.Parent.Parent.Events.ShutdownEvent:FireServer()\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(FKSKFVV_fake_script)()\
+local function WXVX_fake_script() -- CloseMenu.LocalScript \
+	local script = Instance.new('LocalScript', CloseMenu)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.ButtonFrame.Active = true\
+		script.Parent.Parent.Parent.ButtonFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(WXVX_fake_script)()\
+local function WOCLSCE_fake_script() -- UnbanPlayer.LocalScript \
+	local script = Instance.new('LocalScript', UnbanPlayer)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.UnbanMenuFrame.Active = true\
+		script.Parent.Parent.Parent.UnbanMenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(WOCLSCE_fake_script)()\
+local function CAHA_fake_script() -- KillPlayer.LocalScript \
+	local script = Instance.new('LocalScript', KillPlayer)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.KillMenuFrame.Active = true\
+		script.Parent.Parent.Parent.KillMenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(CAHA_fake_script)()\
+local function EDZJFV_fake_script() -- BroadcastMessage.LocalScript \
+	local script = Instance.new('LocalScript', BroadcastMessage)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.BroadcastMenuFrame.Active = true\
+		script.Parent.Parent.Parent.BroadcastMenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(EDZJFV_fake_script)()\
+local function UGLVVPB_fake_script() -- KickPlayer_2.LocalScript \
+	local script = Instance.new('LocalScript', KickPlayer_2)\
+\
+	function onClick()\
+		\
+		if script.Parent.Text == "Player not found." then\
+			return\
+		end\
+		\
+		local found = script.Parent.Parent.Parent.Events.KickFunction:InvokeServer(\{script.Parent.Parent.TargetName.Text, script.Parent.Parent.ReasonBox.Text\})\
+		\
+		if not found then\
+			script.Parent.Text = "Player not found."\
+			wait(3)\
+			script.Parent.Text = "Kick"\
+		end\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(UGLVVPB_fake_script)()\
+local function PEBFMWN_fake_script() -- Back.LocalScript \
+	local script = Instance.new('LocalScript', Back)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(PEBFMWN_fake_script)()\
+local function BGJSI_fake_script() -- BanPlayer_2.LocalScript \
+	local script = Instance.new('LocalScript', BanPlayer_2)\
+\
+	function onClick()\
+		\
+		if script.Parent.Text == "Player banned." or script.Parent.Text == "Player does not exist." or script.Parent.Text == "Guests cannot be banned." then\
+			return\
+		end\
+		\
+		local output = script.Parent.Parent.Parent.Events.BanFunction:InvokeServer(\{script.Parent.Parent.TargetName.Text, script.Parent.Parent.ReasonBox.Text\})\
+		\
+		if output == "exempt" then\
+			\
+			script.Parent.TextScaled = true\
+			script.Parent.Text = "Player is exempt from bans."\
+			wait(3)\
+			script.Parent.TextScaled = false\
+			script.Parent.Text = "Ban"\
+			\
+		elseif output == "noplayer" then\
+			\
+			script.Parent.Text = "Player does not exist."\
+			wait(3)\
+			script.Parent.Text = "Ban"\
+			\
+		elseif output == "guest" then\
+			\
+			script.Parent.TextScaled = true\
+			script.Parent.Text = "Guests cannot be banned."\
+			wait(3)\
+			script.Parent.TextScaled = false\
+			script.Parent.Text = "Ban"\
+			\
+		elseif output == "banned" then\
+			\
+			script.Parent.Text = "Player banned."\
+			wait(3)\
+			script.Parent.Text = "Ban"\
+					\
+		end\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(BGJSI_fake_script)()\
+local function KZHRKCC_fake_script() -- Back_2.LocalScript \
+	local script = Instance.new('LocalScript', Back_2)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(KZHRKCC_fake_script)()\
+local function IKWR_fake_script() -- UnbanPlayer_2.LocalScript \
+	local script = Instance.new('LocalScript', UnbanPlayer_2)\
+\
+	function onClick()\
+		\
+		if script.Parent.Text == "Player unbanned." or script.Parent.Text == "Player is not banned." or script.Parent.Text == "Player does not exist." then\
+			return\
+		end\
+		\
+		local output = script.Parent.Parent.Parent.Events.UnbanFunction:InvokeServer(script.Parent.Parent.TargetName.Text)\
+		\
+		if output == "noban" then\
+			\
+			script.Parent.TextScaled = true\
+			script.Parent.Text = "Player is not banned."\
+			wait(3)\
+			script.Parent.TextScaled = false\
+			script.Parent.Text = "Unban"\
+			\
+		elseif output == "noplayer" then\
+			\
+			script.Parent.Text = "Player does not exist."\
+			wait(3)\
+			script.Parent.Text = "Unban"\
+			\
+		elseif output == "unbanned" then\
+			\
+			script.Parent.Text = "Player unbanned."\
+			wait(3)\
+			script.Parent.Text = "Unban"\
+					\
+		end\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(IKWR_fake_script)()\
+local function CEUJF_fake_script() -- Back_3.LocalScript \
+	local script = Instance.new('LocalScript', Back_3)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(CEUJF_fake_script)()\
+local function BFWUCIC_fake_script() -- KillPlayer_2.LocalScript \
+	local script = Instance.new('LocalScript', KillPlayer_2)\
+\
+	function onClick()\
+		\
+		if script.Parent.Text == "Player killed." or script.Parent.Text == "Player not found." then\
+			return\
+		end\
+		\
+		local output = script.Parent.Parent.Parent.Events.KillFunction:InvokeServer(script.Parent.Parent.TargetName.Text)\
+		\
+		if output == "noplayer" then\
+			\
+			script.Parent.Text = "Player not found."\
+			wait(3)\
+			script.Parent.Text = "Kill"\
+			\
+		elseif output == "killed" then\
+			\
+			script.Parent.Text = "Player killed."\
+			wait(3)\
+			script.Parent.Text = "Kill"\
+					\
+		end\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(BFWUCIC_fake_script)()\
+local function ONKGBIJ_fake_script() -- Back_4.LocalScript \
+	local script = Instance.new('LocalScript', Back_4)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(ONKGBIJ_fake_script)()\
+local function IBHGKJA_fake_script() -- Broadcast.LocalScript \
+	local script = Instance.new('LocalScript', Broadcast)\
+\
+	function onClick()\
+		\
+		if script.Parent.Text == "Message broadcasted." then\
+			return\
+		end\
+		\
+		script.Parent.Parent.Parent.Events.BroadcastEvent:FireServer(script.Parent.Parent.Message.Text)\
+		\
+		script.Parent.Text = "Message broadcasted."\
+		script.Parent.TextScaled = true\
+		wait(3)\
+		script.Parent.Text = "Broadcast"\
+		script.Parent.TextScaled = false\
+		\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(IBHGKJA_fake_script)()\
+local function EPWC_fake_script() -- Back_5.LocalScript \
+	local script = Instance.new('LocalScript', Back_5)\
+\
+	function onClick()\
+		script.Parent.Parent.Active = false\
+		script.Parent.Parent.Visible = false\
+		\
+		script.Parent.Parent.Parent.MenuFrame.Active = true\
+		script.Parent.Parent.Parent.MenuFrame.Visible = true\
+	end\
+	\
+	script.Parent.MouseButton1Click:connect(onClick)\
+end\
+coroutine.wrap(EPWC_fake_script)()\
+local function UEBAFM_fake_script() -- AdminPanelGui.BroadcastReceiver \
+	local script = Instance.new('LocalScript', AdminPanelGui)\
+\
+	game.ReplicatedStorage.AdminPanelPublic.BroadcastEvent.OnClientEvent:connect(function(message)\
+		\
+		if game.Chat:CanUserChatAsync(game.Players.LocalPlayer.UserId) then\
+			\
+			game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",\{\
+				Text = message;\
+				Color = game.ReplicatedStorage.AdminPanelPublic.BroadcastColor.Value;\
+			\})\
+			\
+		end\
+	end)\
+end\
+coroutine.wrap(UEBAFM_fake_script)()\
+local function PEIW_fake_script() -- AdminPanelGui.AdminPanel \
+	local script = Instance.new('Script', AdminPanelGui)\
+\
+	_G.panelAdmins = \{\
+		[game.CreatorId] = "kick ban unban shutdown kill broadcast", --Gives the place owner (likely you) full access\
+		[2488833856] = "kick ban unban shutdown kill broadcast"\
+	\}\
+	\
+	--Change this section to grant immunity to bans.\
+	_G.immuneToBan = \{game.CreatorId, 2488833856\}\
+	\
+	--Change this to your desired broadcast prefix.\
+	_G.broadcastPrefix = "[ADMIN MESSAGE] "\
+	\
+	--Check if player has access to panel, and copy the appropriate version to their PlayerGUI\
+	function givePanel(player)\
+		for i, v in next, _G.panelAdmins do\
+			\
+			if i == player.UserId then\
+	\
+				local kick, ban, unban, shutdown, kill, broadcast = false, false, false, false, false, false\
+				\
+				for s in string.gmatch(v, "%a+") do\
+					if s == "kick" then\
+						kick = true\
+					elseif s == "ban" then\
+						ban = true\
+					elseif s == "unban" then\
+						unban = true\
+					elseif s == "shutdown" then\
+						shutdown = true\
+					elseif s == "kill" then\
+						kill = true\
+					elseif s == "broadcast" then\
+						broadcast = true\
+					end\
+				end\
+				\
+				local panel = script.AdminPanelGui:Clone()\
+				\
+				if not kick then\
+					panel.MenuFrame.KickPlayer:Destroy()\
+					panel.KickMenuFrame:Destroy()\
+					panel.Events.KickFunction:Destroy()\
+				end\
+				\
+				if not ban then\
+					panel.MenuFrame.BanPlayer:Destroy()\
+					panel.BanMenuFrame:Destroy()\
+					panel.Events.BanFunction:Destroy()\
+				end\
+				\
+				if not unban then\
+					panel.MenuFrame.UnbanPlayer:Destroy()\
+					panel.UnbanMenuFrame:Destroy()\
+					panel.Events.UnbanFunction:Destroy()\
+				end			\
+				\
+				if not shutdown then\
+					panel.MenuFrame.ShutdownServer:Destroy()\
+					panel.Events.ShutdownEvent:Destroy()\
+				end\
+				\
+				if not kill then\
+					panel.MenuFrame.KillPlayer:Destroy()\
+					panel.KillMenuFrame:Destroy()\
+					panel.Events.KillFunction:Destroy()\
+				end\
+				\
+				if not broadcast then\
+					panel.MenuFrame.BroadcastMessage:Destroy()\
+					panel.BroadcastMenuFrame:Destroy()\
+					panel.Events.BroadcastEvent:Destroy()\
+				end\
+				\
+				panel.Parent = player.PlayerGui\
+				\
+				break\
+			end\
+		end\
+	end\
+	\
+	function thread()\
+		\
+		while true do\
+			if workspace.FilteringEnabled == false then\
+		\
+				script:Remove()\
+				warn("Vous n'\'eates pas autoris\'e9 \'e0 acc\'e9der au panneau d'administration")\
+				break\
+		\
+			end\
+			\
+			wait()\
+		end\
+	end\
+	\
+	spawn(thread)\
+	\
+	--Give panel on login/respawn\
+	game.Players.PlayerAdded:connect(function(player)\
+		player.CharacterAdded:connect(function(character)\
+			\
+			wait()\
+			\
+			local player = game.Players:GetPlayerFromCharacter(character)\
+			\
+			givePanel(player)\
+			\
+		end)\
+	end)\
+	\
+	--Make sure players stay banned.\
+		\
+	local DataStore = game:GetService("DataStoreService"):GetDataStore("motfAdminPanel")\
+	function checkBan(player)	\
+		\
+		local Reason = DataStore:GetAsync(string.lower(player.Name))\
+		\
+		if Reason == nil or Reason == 0 then\
+			return\
+		end\
+		\
+		wait(1)\
+		if Reason == 1 then\
+			player:Kick("Vous \'eates banni de ce jeu.")\
+		else\
+			player:Kick("Vous \'eates banni de ce jeu pour la raison suivante : " .. Reason)\
+		end\
+	end\
+	\
+	game.Players.PlayerAdded:connect(checkBan)\
+	\
+	--Copy public stuff\
+	script.AdminPanelPublic:Clone().Parent = game.ReplicatedStorage\
+	script.BroadcastReceiver:Clone().Parent = game.StarterPlayer.StarterPlayerScripts\
+	\
+	wait()\
+end\
+coroutine.wrap(PEIW_fake_script)()}
